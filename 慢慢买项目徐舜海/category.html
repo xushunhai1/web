@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<script src='lib/flexible/flexible_css.js'></script>
+<script src='lib/flexible/flexible.js'></script>
+<link rel="stylesheet" href="css/category.css">
+<link rel="stylesheet" href="css/base.css">
+<!--顶部开始-->
+<div class='header clearfix'>
+  <a href="index.html" class='left'><img src="images/header_logo.png" alt=""></a>
+  <a href="index.html" class='right'><img src="images/header_app.png" alt=""></a>
+</div>
+<!--search部分-->
+<div class='search'>
+  <div class="search2 right">
+    <button>搜索</button>
+  </div>
+  <div class="search1"><input type="text" value='请输入您想比价的商品'></div>
+</div>
+<!--家电部分-->
+<div class='proAll'>
+</div>
+
+
+<div class='white'></div>
+<!--底部开始-->
+<div class="bottom">
+  <div class="dl clearfix">
+    <span>登录</span>
+    <div></div>
+    <span>注册</span>
+    <div class='line'></div>
+    <span class='back'>
+      <a href="###">
+        <img src="images/jtt.png" alt="">
+        返回顶部
+      </a>
+    </span>
+  </div>
+  <p class='top'><span>手机APP下载</span>慢慢买手机版--掌上比价平台</p>
+  <p class='man'>m.manmanbuy.com</p>
+</div>
+<script src='lib/jquery/jquery.min.js'></script>
+<script src='lib/artTemplate/template.js'></script>
+<script src='common/common.js'></script>
+<script id='template' type='text/html'>
+  {{each result as item}}
+  <div class="jd clearfix">
+    <p class='jdMain' data-name='{{item.titleId}}'>
+      <span>{{item.title}}</span>
+      <img src="images/arrowdown.png" alt="">
+    </p>
+    <ul class='pro clearfix'>
+    </ul>
+  </div>
+  {{/each}}
+</script>
+<script id='tpl' type='text/html'>
+  {{each result as data}}
+  <li class='pic{{data.categoryId}}'>
+    <h4><a href="proTv.html?list={{data.categoryId}}&pageId=1">{{data.category}}</a></h4>
+  </li>
+  {{/each}}
+</script>
+
+<script>
+
+  $(function () {
+//    悬念
+  var getTitle = new Route();
+    var getSmTitle = new Route();
+  var getXsmTitle=new Route();
+    getTitle.getDate(function(data){
+      var tplStr = template('template', data);
+      $('.proAll').html(tplStr);
+      $('.pro').hide(300);
+      $('.jdMain').on('click', function () {
+        var indexs = $(this).data('name');
+        var  total = $(this);
+        total.next().toggle();
+        getSmTitle.getDate(function(data){
+          var tplStr = template('tpl', data);
+          total.next('.pro').html(tplStr);
+          $('.pic').on('click',function(){
+            var current=$(this);
+            var index=$(this).data('id');
+          })
+        },'getcategory',{titleid: indexs})
+      })
+    },'getcategorytitle')
+    $(function () {
+      $('.bottom .back').on('click', function () {
+        $('html,body').animate({scrollTop: 0}, 500);
+      })
+    })
+  })
+</script>
+</body>
+</html>

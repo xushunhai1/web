@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src='lib/flexible/flexible_css.js'></script>
+  <script src='lib/flexible/flexible.js'></script>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/brandTitle.css">
+</head>
+<body>
+<!--顶部开始-->
+<div class='header clearfix'>
+  <a href="index.html" class='left'><img src="images/header_logo.png" alt=""></a>
+  <a href="index.html" class='right'><img src="images/header_app.png" alt=""></a>
+</div>
+<!--search部分-->
+<div class='search'>
+  <div class="search2 right">
+    <button>搜索</button>
+  </div>
+  <div class="search1"><input type="text" value='请输入您想比价的商品'></div>
+</div>
+<!--热销部分-->
+<div class="hot">
+  热门品牌排行
+</div>
+<!--分类部分-->
+<div class="choose clearfix">
+  <div class="choose1 left">
+    <a href="index.html">首页></a>
+    <a href="category.html">全部分类></a>
+    <!--<a class='tv' href="#">电视></a>-->
+  </div>
+  <div class="choose2 right ">
+    <button>筛选</button>
+  </div>
+</div>
+<!--家电部分-->
+<div class='proAll'>
+
+</div>
+
+<!--底部开始-->
+<div class="bottom">
+  <div class="dl clearfix">
+    <span>登录</span>
+    <div></div>
+    <span>注册</span>
+    <div class='line'></div>
+    <span class='back'>
+      <a href="###">
+        <img src="images/jtt.png" alt="">
+        返回顶部
+      </a>
+    </span>
+  </div>
+  <p class='top'><span>手机APP下载</span>慢慢买手机版--掌上比价平台</p>
+  <p class='man'>m.manmanbuy.com</p>
+</div>
+
+<script src='lib/jquery/jquery.min.js'></script>
+<script src='lib/artTemplate/template.js'></script>
+<script src='common/common.js'></script>
+<script id='template' type='text/html'>
+  {{each result as item}}
+  <div class="jd clearfix">
+    <a href="brand.html?list={{item.brandTitleId}}">
+      <p class='jdMain' data-name='{{item.titleId}}'>
+        <span>{{item.brandTitle}}</span>
+        <img src="images/arrowdown.png" alt="">
+      </p>
+    </a>
+  </div>
+  {{/each}}
+</script>
+<script>
+  var getTitle = new Route();
+  getTitle.getDate(function (data) {
+    console.log(data);
+    var str = template('template', data);
+    $('.proAll').html(str);
+  }, 'getbrandtitle')
+</script>
+</body>
+</html>

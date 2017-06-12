@@ -1,0 +1,240 @@
+body {
+  background-color: #fff;
+}
+.header {
+  height: 1.306634rem;
+  background-color: #ff9916;
+  line-height: 1.306634rem;
+}
+.header .left {
+  width: 5.06654rem;
+  margin: 0 0.253327rem;
+}
+.header .left img {
+  width: 5.06654rem;
+}
+.header .right {
+  margin: 0 0.253327rem;
+}
+.header .right img {
+  width: 0.906644rem;
+}
+.search {
+  height: 1.359966rem;
+  line-height: 1.359966rem;
+  background-color: #fff;
+}
+.search .search1 {
+  margin-left: 0.226661rem;
+  overflow: hidden;
+}
+.search .search1 input {
+  height: 0.759981rem;
+  width: 100%;
+  background-color: #F1F1F1;
+  border-radius: 0.39999rem;
+  text-indent: 0.479988rem;
+  color: #9D8AA9;
+}
+[data-dpr='1'] .search .search1 input {
+  font-size: 16px;
+}
+[data-dpr='2'] .search .search1 input {
+  font-size: 32px;
+}
+[data-dpr='3'] .search .search1 input {
+  font-size: 48px;
+}
+.search .search2 {
+  margin-right: 0.199995rem;
+  margin-left: 0.199995rem;
+}
+.search .search2 button {
+  height: 0.759981rem;
+  width: 1.693291rem;
+  background-color: #ff9916;
+  border-radius: 0.39999rem;
+  color: #fff;
+}
+[data-dpr='1'] .search .search2 button {
+  font-size: 16px;
+}
+[data-dpr='2'] .search .search2 button {
+  font-size: 32px;
+}
+[data-dpr='3'] .search .search2 button {
+  font-size: 48px;
+}
+.hot {
+  margin: 0.26666rem 0.13333rem;
+  height: 0.959976rem;
+  line-height: 0.959976rem;
+  background-color: #EEE;
+  border: 1px solid #CACACA;
+  text-indent: 0.199995rem;
+  color: #8E4903;
+}
+[data-dpr='1'] .hot {
+  font-size: 16px;
+}
+[data-dpr='2'] .hot {
+  font-size: 32px;
+}
+[data-dpr='3'] .hot {
+  font-size: 48px;
+}
+.choose {
+  height: 0.959976rem;
+  background: linear-gradient(to top, #ececec, #ffffff);
+  border-top: 1px solid #C9C9C9;
+  border-bottom: 1px solid #C9C9C9;
+  overflow: hidden;
+}
+.choose .choose1 {
+  height: 0.959976rem;
+}
+.choose .choose1 a {
+  line-height: 0.959976rem;
+  margin-left: 0.199995rem;
+}
+[data-dpr='1'] .choose .choose1 a {
+  font-size: 16px;
+}
+[data-dpr='2'] .choose .choose1 a {
+  font-size: 32px;
+}
+[data-dpr='3'] .choose .choose1 a {
+  font-size: 48px;
+}
+.choose .choose2 {
+  width: 1.679958rem;
+  height: 0.773314rem;
+  margin-top: 0.066665rem;
+}
+.choose .choose2 button {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.066665rem;
+  background: linear-gradient(to bottom, #dbdbdb, #ffffff);
+  box-shadow: 2px 3px 1px #C1C1C1;
+}
+[data-dpr='1'] .choose .choose2 button {
+  font-size: 16px;
+}
+[data-dpr='2'] .choose .choose2 button {
+  font-size: 32px;
+}
+[data-dpr='3'] .choose .choose2 button {
+  font-size: 48px;
+}
+.proAll {
+  background-color: #F1F1F1;
+}
+.proAll .jd {
+  border-top: 1px solid #D2D2D2;
+  border-radius: 5px 5px 0 0;
+}
+.proAll .jd a {
+  display: inline-block;
+  line-height: 1.133305rem;
+  height: 1.133305rem;
+  width: 100%;
+}
+.proAll .jd a p {
+  line-height: 1.133305rem;
+  height: 1.133305rem;
+  border-bottom: 1px solid #D2D2D2;
+}
+.proAll .jd a p span {
+  margin-left: 0.39999rem;
+  color: #000;
+  font-weight: 700;
+}
+[data-dpr='1'] .proAll .jd a p span {
+  font-size: 16px;
+}
+[data-dpr='2'] .proAll .jd a p span {
+  font-size: 32px;
+}
+[data-dpr='3'] .proAll .jd a p span {
+  font-size: 48px;
+}
+.proAll .jd a p img {
+  float: right;
+  margin-right: 0.39999rem;
+  margin-top: 0.199995rem;
+}
+.bottom {
+  background-color: #F1F1F1;
+  height: 3.226586rem;
+}
+.bottom > .dl {
+  height: 0.839979rem;
+  width: 100%;
+  border-bottom: 1px solid #C7C7C7;
+  border-top: 1px solid #C7C7C7;
+  position: relative;
+}
+.bottom > .dl > div {
+  width: 1px;
+  background-color: #C7C7C7;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 30%;
+}
+.bottom > .dl > div.line {
+  left: 60%;
+}
+.bottom > .dl > span {
+  display: inline-block;
+  height: 100%;
+  width: 30%;
+  text-align: center;
+  line-height: 0.839979rem;
+}
+[data-dpr='1'] .bottom > .dl > span {
+  font-size: 16px;
+}
+[data-dpr='2'] .bottom > .dl > span {
+  font-size: 32px;
+}
+[data-dpr='3'] .bottom > .dl > span {
+  font-size: 48px;
+}
+.bottom > .dl > span.back {
+  width: 38%;
+  float: right;
+}
+.bottom > .dl > span.back a {
+  display: inline-block;
+}
+.bottom > .top {
+  margin-top: 0.346658rem;
+  text-align: center;
+}
+[data-dpr='1'] .bottom > .top {
+  font-size: 16px;
+}
+[data-dpr='2'] .bottom > .top {
+  font-size: 32px;
+}
+[data-dpr='3'] .bottom > .top {
+  font-size: 48px;
+}
+.bottom > .top span {
+  color: red;
+}
+[data-dpr='1'] .bottom > .top span {
+  font-size: 20px;
+}
+[data-dpr='2'] .bottom > .top span {
+  font-size: 40px;
+}
+[data-dpr='3'] .bottom > .top span {
+  font-size: 60px;
+}
+.bottom > .man {
+  margin-top: 0.13333rem;
+  text-align: center;
+}

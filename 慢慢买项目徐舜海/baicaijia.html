@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src='lib/flexible/flexible_css.js'></script>
+  <script src='lib/flexible/flexible.js'></script>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/baicaijia.css">
+</head>
+<body>
+<!--头部开始-->
+<div class="save ">
+  <a href="index.html">
+    <div class="left"><</div>
+    <div class="right"><img src="images/header_app.png" alt=""></div>
+    <p class='center'>白菜价-淘宝内部券</p>
+
+  </a>
+</div>
+<!--热销部分-->
+<div class="hot clearfix">
+  <div class="right"></div>
+  <div class="pic">
+    <ul class='clearfix main'>
+      <!--<li class='choose'>热销</li>-->
+      <!--<li>热销</li>-->
+      <!--<li>热销</li>-->
+      <!--<li>热销</li>-->
+      <!--<li>热销</li>-->
+      <!--<li>热销</li>-->
+      <!--<li>热销</li>-->
+      <!--<li>热销</li>-->
+      <!--<li>热销</li>-->
+    </ul>
+  </div>
+</div>
+
+<!--商品部分-->
+<div class="product">
+  <!--<div class="proMain">-->
+    <!--<div class="left"><img src="images" alt=""></div>-->
+    <!--<div class="right">-->
+      <!--<p>商品详情</p>-->
+      <!--<p>券后&yen;<sapn class='price'>106.0</sapn>-->
+        <!--<del>&yen;206.0</del>-->
+      <!--</p>-->
+      <!--<p>-->
+        <!--<sapn>进度条</sapn>-->
+        <!--<span>已领75117张</span></p>-->
+      <!--<div class="youhui">-->
+        <!--<div class="main">点此领-->
+        <!--</div>-->
+        <!--<div class="true"></div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+</div>
+<!--底部开始-->
+<div class="bottom">
+<div class="dl clearfix">
+  <span>登录</span>
+  <div></div>
+  <span>注册</span>
+  <div class='line'></div>
+    <span class='back'>
+      <a href="###">
+        <img src="images/jtt.png" alt="">
+        返回顶部
+      </a>
+    </span>
+</div>
+<p class='top'><span>手机APP下载</span>慢慢买手机版--掌上比价平台</p>
+<p class='man'>m.manmanbuy.com</p>
+</div>
+<script src='lib/jquery/jquery.min.js'></script>
+<script src='lib/artTemplate/template.js'></script>
+<script src='common/common.js'></script>
+<script src='lib/iscroll/iscroll.js'></script>
+<script id='tpl' type='text/html'>
+  {{each result as data}}
+  <li ><a href="#" data-id='{{data.titleId}}'>{{data.title}}</a></li>
+  {{/each}}
+</script>
+<script id='template' type='text/html'>
+{{each result as item}}
+<div class="proMain clearfix">
+  <div class="left">{{#item.productImg}}</div>
+  <div class="txt">
+    <p>{{#item.productName}}</p>
+    <p><sapn class='price'>{{#item.productPrice}}</sapn>
+      <!--<del>&yen;206.0</del>-->
+    </p>
+    {{#item.productCouponRemain}}
+    <div class="youhui">
+      <!--<div class="main">点此领-->
+      <!--</div>-->
+      {{#item.productCoupon}}
+      {{#item.productHref}}
+    </div>
+  </div>
+</div>
+{{/each}}
+</script>
+<script>
+  var getTitle = new Route();
+  getTitle.getDate(function (data) {
+    console.log(data);
+    var tpl=template('tpl',data);
+    $('.pic .main').html(tpl);
+    $('.main li a').on('click',function(){
+      var $this=$(this);
+      var titleid=$this.data('id');
+      var getPro=new Route();
+      $this.addClass('choose').parent().siblings().children().removeClass('choose');
+      getPro.getDate(function(data){
+        console.log(data);
+        var str=template('template',data);
+        $('.product').html(str);
+      },'getbaicaijiaproduct',{titleid:titleid});
+    })
+
+    var myScroll;
+    function loaded () {
+      myScroll = new IScroll('.pic', {
+        scrollX: true,   // 横向
+        scrollY: false   // 纵向
+      });
+    }
+//    var ul=document.querySelector('.pic .main');
+//    var pro=document.querySelector('.pic');
+//    var lis=ul.children;
+
+    var width=0;
+    $('.pic .main li').each(function(i,e){
+        width+=$(e).innerWidth();
+    })
+    width+=$('.right').innerWidth();
+    $('.pic .main').width(width);
+    loaded()
+
+
+    $('.pic').on('click','li',function(){
+      myScroll.scrollToElement($(this)[0]);
+    })
+//    var arr=[];
+//    var downMax=50;
+//    var num=0;
+//    var upMax=-(ul.offsetWidth-pro.offsetWidth+downMax);
+//    var bounceUpMax=-(ul.offsetWidth-pro.offsetWidth);
+//    for(var i=0;i<lis.length;i++){
+//      num+=lis[i].innerWidth();
+//    }
+//    console.log(num);
+//    for(var i=0;i<arr.length;i++){
+//      num+=arr[i];
+//    }
+//    ul.style.width=num;
+//    console.log(ul.offsetWidth);
+//    ul.addEventListener('touchstart',function(e){
+////    alert('hh');
+////    console.log(e);
+//      startX= e.changedTouches[0].clientX;
+//    })
+//    ul.addEventListener('touchmove',function(e){
+//      var dy= e.changedTouches[0].clientX-startX;
+//      var tempX=dy+centerX;
+//      if(tempX>=downMax){
+//        ul.style.transform='translate('+downMax+'px)';
+//      }else if(tempX<=upMax){
+//        ul.style.transform='translate('+upMax+'px)';
+//      }else{
+//        ul.style.transform='translate('+tempX+'px)';
+//      }
+//
+//    })
+//    ul.addEventListener('touchend',function(e){
+//      var dy= e.changedTouches[0].clientX-startX;
+//      centerX=dy+centerX;
+//    if(centerX>=0){
+//      centerX=0;
+//      ul.style.transition='all 0.5s';
+//      ul.style.transform='translate(0px)';
+//    }else if(centerX<=bounceUpMax){
+//      ul.style.transition='all 0.5s';
+//      ul.style.transform='translate('+centerX+'px)';
+//    }
+//    })
+  }, 'getbaicaijiatitle');
+
+var urlDate=location.href;
+  var getUrl=new Route();
+  var id=getUrl.query(urlDate).pageid;
+  var getPro=new Route();
+  getPro.getDate(function(data){
+//    console.log(data);
+    var str=template('template',data);
+    $('.product').html(str);
+    $('.main li a').eq(0).addClass('choose');
+  },'getbaicaijiaproduct',{titleid:id});
+
+//  var bounceUpMax=-(scroll.offsetHeight-cateWrap.offsetHeight);
+
+
+
+</script>
+</body>
+</html>

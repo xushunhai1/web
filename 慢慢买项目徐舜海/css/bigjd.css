@@ -1,0 +1,198 @@
+.header {
+  height: 1.306634rem;
+  background-color: #ff9916;
+  line-height: 1.306634rem;
+}
+.header .left {
+  width: 5.06654rem;
+  margin: 0 0.253327rem;
+}
+.header .left img {
+  width: 5.06654rem;
+}
+.header .right {
+  margin: 0 0.253327rem;
+}
+.header .right img {
+  width: 0.906644rem;
+}
+.search {
+  height: 1.359966rem;
+  line-height: 1.359966rem;
+  background-color: #fff;
+}
+.search .search1 {
+  margin-left: 0.226661rem;
+  overflow: hidden;
+}
+.search .search1 input {
+  height: 0.759981rem;
+  width: 100%;
+  background-color: #F1F1F1;
+  border-radius: 0.39999rem;
+  text-indent: 0.479988rem;
+  color: #9D8AA9;
+}
+[data-dpr='1'] .search .search1 input {
+  font-size: 12px;
+}
+[data-dpr='2'] .search .search1 input {
+  font-size: 24px;
+}
+[data-dpr='3'] .search .search1 input {
+  font-size: 36px;
+}
+.search .search2 {
+  margin-right: 0.199995rem;
+  margin-left: 0.199995rem;
+}
+.search .search2 button {
+  height: 0.759981rem;
+  width: 1.693291rem;
+  background-color: #ff9916;
+  border-radius: 0.39999rem;
+  color: #fff;
+}
+[data-dpr='1'] .search .search2 button {
+  font-size: 12px;
+}
+[data-dpr='2'] .search .search2 button {
+  font-size: 24px;
+}
+[data-dpr='3'] .search .search2 button {
+  font-size: 36px;
+}
+.proAll .jd {
+  border-top: 1px solid #D2D2D2;
+  border-radius: 5px 5px 0 0;
+}
+.proAll .jd > .pro {
+  background-color: #fff;
+}
+.proAll .jd > .pro li {
+  float: left;
+  width: 33.333%;
+  height: 1.013308rem;
+  line-height: 1.013308rem;
+  border-bottom: 1px solid #D2D2D2;
+  border-right: 1px solid #D2D2D2;
+}
+.proAll .jd > .pro li:nth-child(3n) {
+  border-right: none;
+}
+.proAll .jd > .pro li:last-child {
+  border-bottom: none;
+}
+.proAll .jd > .pro li h4 {
+  text-align: center;
+}
+[data-dpr='1'] .proAll .jd > .pro li h4 {
+  font-size: 16px;
+}
+[data-dpr='2'] .proAll .jd > .pro li h4 {
+  font-size: 32px;
+}
+[data-dpr='3'] .proAll .jd > .pro li h4 {
+  font-size: 48px;
+}
+.proAll .jd p {
+  line-height: 0.999975rem;
+  height: 0.999975rem;
+  border-bottom: 1px solid #D2D2D2;
+}
+.proAll .jd p span {
+  margin-left: 0.39999rem;
+  color: #000;
+  font-weight: 700;
+}
+[data-dpr='1'] .proAll .jd p span {
+  font-size: 20px;
+}
+[data-dpr='2'] .proAll .jd p span {
+  font-size: 40px;
+}
+[data-dpr='3'] .proAll .jd p span {
+  font-size: 60px;
+}
+.proAll .jd p img {
+  float: right;
+  margin-right: 0.39999rem;
+  margin-top: 0.199995rem;
+}
+.white {
+  height: 0.66665rem;
+  background-color: #fff;
+}
+.bottom {
+  height: 3.226586rem;
+}
+.bottom > .dl {
+  height: 0.839979rem;
+  width: 100%;
+  border-bottom: 1px solid #C7C7C7;
+  border-top: 1px solid #C7C7C7;
+  position: relative;
+}
+.bottom > .dl > div {
+  width: 1px;
+  background-color: #C7C7C7;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 30%;
+}
+.bottom > .dl > div.line {
+  left: 60%;
+}
+.bottom > .dl > span {
+  display: inline-block;
+  height: 100%;
+  width: 30%;
+  text-align: center;
+  line-height: 0.839979rem;
+}
+[data-dpr='1'] .bottom > .dl > span {
+  font-size: 16px;
+}
+[data-dpr='2'] .bottom > .dl > span {
+  font-size: 32px;
+}
+[data-dpr='3'] .bottom > .dl > span {
+  font-size: 48px;
+}
+.bottom > .dl > span.back {
+  width: 38%;
+  float: right;
+}
+.bottom > .dl > span.back a {
+  display: inline-block;
+}
+.bottom > .top {
+  margin-top: 0.346658rem;
+  text-align: center;
+}
+[data-dpr='1'] .bottom > .top {
+  font-size: 16px;
+}
+[data-dpr='2'] .bottom > .top {
+  font-size: 32px;
+}
+[data-dpr='3'] .bottom > .top {
+  font-size: 48px;
+}
+.bottom > .top span {
+  color: red;
+}
+[data-dpr='1'] .bottom > .top span {
+  font-size: 20px;
+}
+[data-dpr='2'] .bottom > .top span {
+  font-size: 40px;
+}
+[data-dpr='3'] .bottom > .top span {
+  font-size: 60px;
+}
+.bottom > .man {
+  margin-top: 0.13333rem;
+  text-align: center;
+}

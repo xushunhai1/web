@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src='lib/flexible/flexible_css.js'></script>
+  <script src='lib/flexible/flexible.js'></script>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/gsproduct.css">
+</head>
+<body>
+<div class="save ">
+  <a href="index.html">
+    <div class="left"><</div>
+    <div class="right"><img src="images/header_app.png" alt=""></div>
+    <p class='center'>凑单品</p>
+  </a>
+</div>
+<div class="hot clearfix">
+  <div class="right"></div>
+  <div class="pic">
+    <ul class='clearfix mainAll'>
+      <li class='allMain jd'>
+        <span class='jdClick'>京东</span>
+        <ul class='main'>
+
+        </ul>
+      </li>
+
+      <li class='allMain hb'>
+        <span class='hbClick'>华北</span>
+        <ul class='main'>
+
+        </ul>
+      </li>
+      <li class='allMain all'>
+        <span>全部价格</span>
+        <ul class='main'>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="product">
+  <ul class='clearfix main'>
+
+    <li></li>
+  </ul>
+</div>
+<div class="bottom">
+  <div class="dl clearfix">
+    <span>登录</span>
+    <div></div>
+    <span>注册</span>
+    <div class='line'></div>
+    <span class='back'>
+      <a href="###">
+        <img src="images/jtt.png" alt="">
+        返回顶部
+      </a>
+    </span>
+  </div>
+  <p class='top'><span>手机APP下载</span>慢慢买手机版--掌上比价平台</p>
+  <p class='man'>m.manmanbuy.com</p>
+</div>
+<script src='lib/jquery/jquery.min.js'></script>
+<script src='lib/artTemplate/template.js'></script>
+<script src='common/common.js'></script>
+<script id='tpl' type='text/html'>
+  {{each result as item}}
+  <li data-id='{{item.shopId}}'>{{item.shopName}}
+  <img src="images/timg.jpg" alt="">
+  </li>
+  {{/each}}
+</script>
+<script id='tpl1' type='text/html'>
+  {{each result as item}}
+  <li data-id='{{item.areaId}}'>{{item.areaName}}</li>
+  {{/each}}
+</script>
+<script id='tpl2' type='text/html'>
+{{each result as item}}
+<li>
+  <div class="pic">
+    <img src="{{#item.productImg}}" alt="">
+  </div>
+  <p>{{item.productName}}</p>
+  <span class="price">
+    <span>{{item.productPrice}}</span>
+    <span class="gsproduct">
+      去凑单
+    </span>
+    </span>
+  </div>
+</li>
+{{/each}}
+</script>
+<script>
+var index;
+var list;
+  $('.jdClick').on('click',function(){
+//    alert('hh');
+    $('.jd .main').toggle(300);
+    var getjd=new Route();
+    getjd.getDate(function(data){
+
+      var str=template('tpl',data);
+      $('.jd .main').html(str);
+//      $('.jd .main').show();
+      var lis=$('.jd .main').children();
+      lis.each(function(i,e){
+        $(e).on('click',function(){
+            var $this=$(this);
+            index=$this.data('id');
+         var text=$this.html();
+          $('.jdClick').html(text);
+
+          $this.children().show().parent().childern().hide();
+          getPro({shopid:index,areaid:0});
+          $('.jd .main').hide();
+        })
+      })
+    },'getgsshop')
+  })
+
+
+  $('.hbClick').on('click',function(){
+    var getjd=new Route();
+    $('.hb .main').toggle(300);
+    getjd.getDate(function(data){
+//      console.log(data);
+      var str=template('tpl1',data);
+        $('.hb .main').html(str);
+//        $('.hb .main').show();
+      var lis=$('.hb .main').children();
+      lis.each(function(i,e){
+        $(e).on('click',function(){
+          var $this=$(this);
+          list=$this.data('id');
+          var text=$this.html();
+          text=text.substring(0,2);
+          $('.hbClick').html(text);
+          getPro({shopid:0,areaid:list});
+          $('.hb .main').hide();
+        })
+      })
+    },'getgsshoparea')
+  })
+
+//  var getProduct=new Route();
+//  getProduct.getDate(function(data){
+//    var str=template('tpl2',data);
+//    $('.product .main').html(str);
+//  },'getgsproduct',{shopid:0,areaid:0});
+getPro({shopid:0,areaid:0});
+  function getPro(data){
+    data=data||{};
+    var getPro=new Route();
+    getPro.getDate(function(data){
+      console.log(data);
+      var str=template('tpl2',data);
+      $('.product .main').html(str);
+    },'getgsproduct',data);
+  }
+
+
+
+</script>
+</body>
+</html>

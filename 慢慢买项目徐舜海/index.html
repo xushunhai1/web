@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src='lib/flexible/flexible_css.js'></script>
+  <script src='lib/flexible/flexible.js'></script>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+  <!--顶部开始-->
+  <div class='header clearfix'>
+    <a href="index.html" class='left'><img  src="images/header_logo.png" alt=""></a>
+    <a href="index.html" class='right'><img  src="images/header_app.png" alt=""></a>
+  </div>
+  <!--search部分-->
+  <div class='search'>
+    <div class="search2 right"><button>搜索</button></div>
+    <div class="search1"><input type="text" value='请输入您想比价的商品'></div>
+  </div>
+  <!--菜单部分-->
+  <div class="menu">
+    <ul class='clearfix menuMain'>
+      <!--<li>-->
+        <!--<a href="#">-->
+          <!--<div>-->
+            <!--<img src="images/ic_search.png" alt="">-->
+            <!--<p>比价搜索</p>-->
+          <!--</div>-->
+        <!--</a>-->
+      <!--</li>-->
+
+    </ul>
+  </div>
+  <!--折扣部分-->
+  <div class="sale">
+    <p class="left">超值折扣推荐</p>
+    <div class="right">
+      <a href="###">
+        >
+      </a>
+    </div>
+  </div>
+  <!--商品部分-->
+  <div class="product">
+    <ul class='productMain'>
+      <!--<li>-->
+        <!--<a href="#">-->
+          <!--<div class='pro-main clearfix'>-->
+            <!--<div class="pic">-->
+              <!--<img src="images/pic.png" alt="">-->
+            <!--</div>-->
+            <!--<div class="price">-->
+              <!--<p>商品详情</p>-->
+              <!--<p>价格</p>-->
+              <!--<p class="time">京东商城|<span>时间</span></p>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</a>-->
+      <!--</li>-->
+    </ul>
+  </div>
+  <!--优惠信息部分-->
+  <div class="free">
+    <div class="free-main">
+      <a href="moneyctrl.html?pageid=0">
+        更多优惠信息 》
+      </a>
+    </div>
+  </div>
+<!--品牌排行部分-->
+  <div class="brand">
+    <p class="left">品牌排行</p>
+    <div class="right">
+      <a href="###">
+        >
+      </a>
+    </div>
+  </div>
+<!--底部开始-->
+<div class="bottom">
+  <div class="dl clearfix">
+    <span>登录</span>
+    <div></div>
+    <span>注册</span>
+    <div class='line'></div>
+    <span class='back'>
+      <a href="###">
+        <img src="images/jtt.png" alt="">
+        返回顶部
+      </a>
+    </span>
+  </div>
+  <p class='top'><span>手机APP下载</span>慢慢买手机版--掌上比价平台</p>
+  <p class='man'>m.manmanbuy.com</p>
+</div>
+
+  <script src='lib/jquery/jquery.min.js'></script>
+  <script src='lib/artTemplate/template.js'></script>
+  <!--<script src='common/common.js'></script>-->
+  <!--<script src='js/index.js'></script>-->
+
+  <script id='template' type='text/html'>
+      {{each result as item}}
+        <li class='item{{item.indexmenuId}}' >
+          <a href='{{item.titlehref}}?pageid=0'>
+            <div>
+              <!--<img src="images/ic_search.png" alt="">-->
+              {{#item.img}}
+              <p>{{item.name}}</p>
+            </div>
+          </a>
+        </li>
+      {{/each}}
+  </script>
+  <script id='tpl' type='text/html'>
+    {{each result as item}}
+    <li>
+      <a href="moneyctrl1.html?list={{item.productId}}">
+        <div class='pro-main clearfix'>
+          <div class="pic">
+            {{#item.productImgSm}}
+          </div>
+          <div class="price">
+            <p>{{item.productName}}</p>
+            <p class='priceM'>{{item.productPinkage}}</p>
+            <p class="time clearfix ">
+              {{item.productFrom}} |
+              <span>{{item.productTime}}</span>
+              <span class='num right'>{{item.productComCount}}</span>
+            </p>
+          </div>
+
+        </div>
+      </a>
+    </li>
+    {{/each}}
+  </script>
+  <script>
+    (function(){
+      $.ajax({
+        url: 'http://192.168.16.58:9090/api/getindexmenu',
+        type:'get',
+        dataType:'json',
+        success:function(data){
+          console.log(data);
+          var tplStr=template('template',data);
+//          console.log(tplStr);
+          $('.menuMain').html(tplStr);
+//          var flag=true;
+//          $('.menu').height(210);
+          var flag=true;
+          var $this;
+          $('.menu .item7').nextAll().hide();
+          $('.menu .item7').on('click',function(){
+//               flag=false;
+//            $this=$(this);
+            if(flag){
+              $(this).nextAll().show(300);
+            }else{
+              $(this).nextAll().hide(300);
+            }
+            flag=!flag;
+          })
+        }
+      })
+      $.ajax({
+        url:'http://192.168.16.58:9090/api/getmoneyctrl',
+        type:'get',
+        dataType:'json',
+        success:function(data){
+          console.log(data);
+          var tplStr=template('tpl',data);
+        console.log(tplStr);
+          $('.productMain').html(tplStr);
+
+        }
+      })
+      $(function(){
+        $('.bottom .back').on('click',function(){
+          $('html,body').animate({scrollTop:0},500);
+        })
+      })
+    })()
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src='lib/flexible/flexible_css.js'></script>
+  <script src='lib/flexible/flexible.js'></script>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/proTv.css">
+
+</head>
+<body>
+<!--顶部开始-->
+<div class='header clearfix'>
+  <a href="index.html" class='left'><img src="images/header_logo.png" alt=""></a>
+  <a href="index.html" class='right'><img src="images/header_app.png" alt=""></a>
+</div>
+<!--search部分-->
+<div class='search'>
+  <div class="search2 right">
+    <button>搜索</button>
+  </div>
+  <div class="search1"><input type="text" value='请输入您想比价的商品'></div>
+</div>
+<!--分类部分-->
+<div class="choose clearfix">
+  <div class="choose1 left">
+    <a href="index.html">首页></a>
+    <a href="category.html">全部分类></a>
+    <!--<a class='tv' href="#">电视></a>-->
+  </div>
+  <div class="choose2 right ">
+    <button>筛选</button>
+  </div>
+</div>
+<!--商品部分-->
+<div class="picTv">
+
+</div>
+<!--翻页部分-->
+<div class="page">
+  <div class="le left">
+    <button>上一页</button>
+  </div>
+  <div class="center left">
+    <select>
+      <!--<option><span class='num1'>1</span>/<span class='num2'></span></option>-->
+      <!--<option><span class='num'>2</span>/3</option>-->
+      <!--<option><span class='num'>3</span>/3</option>-->
+    </select>
+  </div>
+  <div class="ri left">
+    <button>下一页</button>
+  </div>
+</div>
+<!--底部开始-->
+<div class="bottom">
+  <div class="dl clearfix">
+    <span>登录</span>
+    <div></div>
+    <span>注册</span>
+    <div class='line'></div>
+    <span class='back'>
+      <a href="###">
+        <img src="images/jtt.png" alt="">
+        返回顶部
+      </a>
+    </span>
+  </div>
+  <p class='top'><span>手机APP下载</span>慢慢买手机版--掌上比价平台</p>
+  <p class='man'>m.manmanbuy.com</p>
+</div>
+<script src='lib/jquery/jquery.min.js'></script>
+<script src='lib/artTemplate/template.js'></script>
+<script src='./common/common.js'></script>
+<script id='tpl' type='text/html'>
+  {{each result as item}}
+  <a class='tv' href="#">{{item.category}}></a>
+  {{/each}}
+</script>
+<script id='template' type='text/html'>
+  {{each result as data}}
+  <a href="introduce.html?list={{data.productId}}">
+    <div class="picMain clearfix">
+      <div class="pic left">
+        {{#data.productImg}}
+      </div>
+      <div class="info">
+        <p class='fir'>{{data.productName}}</p>
+        <p class='price'>{{data.productPrice}}</p>
+        <p class='last'>{{data.productQuote}} {{data.productCom}}</p>
+      </div>
+    </div>
+  </a>
+  {{/each}}
+</script>
+<script>
+
+  (function () {
+
+    $('.search1 input').on('focus', function () {
+      if ($(this).val('请输入您想比价的商品')) {
+        $(this).val('');
+      }
+    })
+    $('.search1 input').on('blur', function () {
+      if ($(this).val('')) {
+        $(this).val('请输入您想比价的商品');
+      }
+    })
+
+
+    var urlId = location.href;
+
+    var getId = new Route();
+    var index = getId.query(urlId).list;
+    var page = getId.query(urlId).pageId;
+//    console.log(index);
+//    console.log(page);
+//    var id;
+    var getXsmTitle = new Route();
+    getXsmTitle.getDate(function (data) {
+
+      var str = template('tpl', data);
+//      console.log(str);
+      $('.choose1').append(str);
+//      console.log(data);
+//      id=data.result[0].categoryId;
+    }, 'getcategorybyid', {categoryid: index})
+
+
+    var getProduct = new Route();
+    var curNum;
+    var pageCount;
+    function fanye() {
+      getProduct.getDate(function (data) {
+        console.log(data);
+        var totalCount = data.totalCount;
+        var totalPage = data.pagesize;
+        curNum = totalCount / totalPage;
+        pageCount=Math.ceil(curNum);
+        var tplStr = template('template', data);
+        $('.picTv').html(tplStr);
+        init()
+      }, 'getproductlist', {categoryid: index, pageid: page})
+    }
+
+    fanye();
+    var select=document.querySelector('.center select');
+  function init(){
+    for(var i=0;i<pageCount;i++){
+      var option;
+      option+='<option>'+(i+1)+'/'+pageCount+'</option>';
+    }
+    select.innerHTML=option;
+    $(select).children().eq(page-1).prop('selected',true);
+  }
+    $('select').on('change',function(){
+      var $count=$(this).val();
+      var $count=$count.slice(0,1);
+      console.log($count);
+      window.location='./proTv.html?list='+index+'&pageId='+$count;
+    })
+
+//    上页下页
+
+    $('.ri').on('click', function () {
+      if(page>=pageCount){
+        return;
+      }
+      page++;
+      window.location='./proTv.html?list='+index+'&pageId='+page;
+    })
+    $('.le').on('click', function () {
+      if(page<0){
+        return;
+      }
+      page--;
+      window.location='./proTv.html?list='+index+'&pageId='+page;
+    })
+
+  })()
+</script>
+</body>
+</html>

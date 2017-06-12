@@ -1,0 +1,300 @@
+.save {
+  height: 1.173304rem;
+  width: 100%;
+  background-color: #F4483E;
+  padding: 0 0.13333rem;
+}
+.save a {
+  display: inline-block;
+  height: 1.173304rem;
+  width: 100%;
+}
+.save a p {
+  height: 1.173304rem;
+  line-height: 1.173304rem;
+  margin-right: 0.79998rem;
+  margin-left: 0.79998rem;
+  color: #fff;
+  text-align: center;
+}
+[data-dpr='1'] .save a p {
+  font-size: 22px;
+}
+[data-dpr='2'] .save a p {
+  font-size: 44px;
+}
+[data-dpr='3'] .save a p {
+  font-size: 66px;
+}
+.save a .left {
+  width: 0.66665rem;
+  height: 1.306634rem;
+  line-height: 1.306634rem;
+  color: #fff;
+  font-family: 'simsun';
+  text-align: center;
+}
+[data-dpr='1'] .save a .left {
+  font-size: 28px;
+}
+[data-dpr='2'] .save a .left {
+  font-size: 56px;
+}
+[data-dpr='3'] .save a .left {
+  font-size: 84px;
+}
+.save a .right {
+  height: 1.173304rem;
+  line-height: 1.173304rem;
+}
+.save a .right img {
+  width: 0.93331rem;
+}
+.hot {
+  height: 1.06664rem;
+}
+.hot .pic {
+  margin-right: 0.79998rem;
+  overflow: hidden;
+  height: 1.06664rem;
+}
+.hot .pic ul {
+  height: 1.06664rem;
+  line-height: 1.06664rem;
+  padding: 0.053332rem 0;
+  width: 1000%;
+}
+.hot .pic ul li {
+  height: 1.06664rem;
+  float: left;
+  padding: 0 0.26666rem;
+}
+[data-dpr='1'] .hot .pic ul li {
+  font-size: 15px;
+}
+[data-dpr='2'] .hot .pic ul li {
+  font-size: 30px;
+}
+[data-dpr='3'] .hot .pic ul li {
+  font-size: 45px;
+}
+.hot .pic ul li a {
+  padding-bottom: 0.199995rem;
+}
+.hot .pic ul li a.choose {
+  border-bottom: 0.053332rem solid #ff0000;
+}
+.hot .right {
+  width: 0.79998rem;
+  height: 100%;
+  background-color: #ccc;
+  border-left: 1px solid #ccc;
+}
+.product .proMain {
+  margin-top: 0.106664rem;
+  border-top: 0.106664rem solid #cccccc;
+  padding: 0.26666rem 0.13333rem;
+}
+.product .proMain .left {
+  background-color: #ccc;
+}
+.product .proMain .left img {
+  height: 3.33325rem;
+  width: 3.33325rem;
+}
+.product .proMain .txt {
+  margin-left: 3.73324rem;
+}
+.product .proMain .txt p {
+  margin-top: 0.226661rem;
+}
+[data-dpr='1'] .product .proMain .txt p {
+  font-size: 16px;
+}
+[data-dpr='2'] .product .proMain .txt p {
+  font-size: 32px;
+}
+[data-dpr='3'] .product .proMain .txt p {
+  font-size: 48px;
+}
+.product .proMain .txt p:nth-child(1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  font-weight: 700;
+}
+.product .proMain .txt p:nth-child(2) {
+  color: red;
+}
+[data-dpr='1'] .product .proMain .txt p:nth-child(2) .price {
+  font-size: 18px;
+}
+[data-dpr='2'] .product .proMain .txt p:nth-child(2) .price {
+  font-size: 36px;
+}
+[data-dpr='3'] .product .proMain .txt p:nth-child(2) .price {
+  font-size: 54px;
+}
+.product .proMain .txt p:nth-child(2) .price del {
+  margin-left: 0.39999rem;
+  color: #BEBAB9;
+}
+[data-dpr='1'] .product .proMain .txt p:nth-child(2) .price del {
+  font-size: 14px;
+}
+[data-dpr='2'] .product .proMain .txt p:nth-child(2) .price del {
+  font-size: 28px;
+}
+[data-dpr='3'] .product .proMain .txt p:nth-child(2) .price del {
+  font-size: 42px;
+}
+.product .proMain .txt .bar {
+  margin-top: 0.26666rem;
+  color: red;
+}
+[data-dpr='1'] .product .proMain .txt .bar {
+  font-size: 14px;
+}
+[data-dpr='2'] .product .proMain .txt .bar {
+  font-size: 28px;
+}
+[data-dpr='3'] .product .proMain .txt .bar {
+  font-size: 42px;
+}
+.product .proMain .txt .bar i {
+  display: inline-block;
+  width: 2.39994rem;
+  height: 0.53332rem;
+  border: 2px solid red;
+  border-radius: 0.106664rem;
+  line-height: 0.53332rem;
+  position: relative;
+}
+.product .proMain .txt .bar i em {
+  display: inline-block;
+  background-color: red;
+  height: 100%;
+  border-radius: 0.106664rem;
+}
+.product .proMain .txt .bar i span {
+  display: inline-block;
+  height: 0.53332rem;
+  line-height: 0.53332rem;
+  position: absolute;
+  top: 0;
+}
+.product .proMain .txt .bar b {
+  margin-left: 0.66665rem;
+}
+[data-dpr='1'] .product .proMain .txt .bar b {
+  font-size: 18px;
+}
+[data-dpr='2'] .product .proMain .txt .bar b {
+  font-size: 36px;
+}
+[data-dpr='3'] .product .proMain .txt .bar b {
+  font-size: 54px;
+}
+.product .proMain .txt .youhui a:nth-child(1) {
+  display: inline-block;
+  width: 2.79993rem;
+  height: 0.79998rem;
+  border: 1px dashed red;
+  line-height: 0.79998rem;
+}
+.product .proMain .txt .youhui a:nth-child(2) {
+  display: inline-block;
+  border-radius: 0.13333rem;
+  float: right;
+  width: 2.39994rem;
+  height: 0.79998rem;
+  background-color: red;
+  line-height: 0.79998rem;
+  text-align: center;
+  color: #fff;
+}
+[data-dpr='1'] .product .proMain .txt .youhui a:nth-child(2) {
+  font-size: 16px;
+}
+[data-dpr='2'] .product .proMain .txt .youhui a:nth-child(2) {
+  font-size: 32px;
+}
+[data-dpr='3'] .product .proMain .txt .youhui a:nth-child(2) {
+  font-size: 48px;
+}
+.bottom {
+  height: 3.226586rem;
+}
+.bottom > .dl {
+  margin-top: 0.706649rem;
+  height: 0.839979rem;
+  width: 100%;
+  border-bottom: 1px solid #C7C7C7;
+  border-top: 1px solid #C7C7C7;
+  position: relative;
+}
+.bottom > .dl > div {
+  width: 1px;
+  background-color: #C7C7C7;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 30%;
+}
+.bottom > .dl > div.line {
+  left: 60%;
+}
+.bottom > .dl > span {
+  display: inline-block;
+  height: 100%;
+  width: 30%;
+  text-align: center;
+  line-height: 0.839979rem;
+}
+[data-dpr='1'] .bottom > .dl > span {
+  font-size: 16px;
+}
+[data-dpr='2'] .bottom > .dl > span {
+  font-size: 32px;
+}
+[data-dpr='3'] .bottom > .dl > span {
+  font-size: 48px;
+}
+.bottom > .dl > span.back {
+  width: 38%;
+  float: right;
+}
+.bottom > .dl > span.back a {
+  display: inline-block;
+}
+.bottom > .top {
+  margin-top: 0.346658rem;
+  text-align: center;
+}
+[data-dpr='1'] .bottom > .top {
+  font-size: 16px;
+}
+[data-dpr='2'] .bottom > .top {
+  font-size: 32px;
+}
+[data-dpr='3'] .bottom > .top {
+  font-size: 48px;
+}
+.bottom > .top span {
+  color: red;
+}
+[data-dpr='1'] .bottom > .top span {
+  font-size: 20px;
+}
+[data-dpr='2'] .bottom > .top span {
+  font-size: 40px;
+}
+[data-dpr='3'] .bottom > .top span {
+  font-size: 60px;
+}
+.bottom > .man {
+  margin-top: 0.13333rem;
+  text-align: center;
+}

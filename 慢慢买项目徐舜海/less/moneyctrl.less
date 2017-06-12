@@ -1,0 +1,217 @@
+@remBase : 75;
+@baseColor:#FF9916;
+@rem: round( 1 / @remBase, 6 ) * 1rem;
+.font-size(@px){
+  [data-dpr='1'] & {
+    font-size:round(@px*1)*1px;
+  }
+  [data-dpr='2'] & {
+    font-size:round(@px*2)*1px;
+  }
+  [data-dpr='3'] & {
+    font-size:round(@px*3)*1px;
+  }
+}
+.txt_cut(@num:2) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: @num;
+  -webkit-box-orient: vertical;
+}
+
+.save{
+  height:98*@rem;
+  width:100%;
+  background-color: @baseColor;
+  padding: 0 10*@rem;
+  //position: relative;
+ a{
+   display: inline-block;
+   height:98*@rem;
+   width:100%;
+   p{
+     height:98*@rem;
+     line-height:98*@rem;
+     margin-right:60*@rem;
+     margin-left:60*@rem;
+     color:#fff;
+     .font-size(22);
+     text-align: center;
+   }
+   .left{
+     width:50*@rem;
+     height:98*@rem;
+     line-height:98*@rem;
+     .font-size(28);
+     color:#fff;
+     font-family: 'simsun';
+     text-align: center;
+   }
+   .right{
+     //width:50*@rem;
+     height:98*@rem;
+     line-height:98*@rem;
+     img{
+       width:70*@rem;
+       //height:98*@rem;
+     }
+   }
+ }
+}
+.product{
+  //width: 100%;
+  background-color: #fff;
+  a{
+    display: inline-block;
+    width: 100%;
+    .pro-main{
+      height:280*@rem;
+      padding: 30*@rem 30*@rem;
+      border-bottom: 1px solid #E1E1E1;
+      .pic{
+        width:200*@rem;
+        //height:199*@rem;
+        height:200*@rem;
+        float: left;
+        margin-right:10*@rem;
+        img{
+          width:200*@rem;
+          height:200*@rem;
+        }
+      }
+      .price{
+        //float: left;
+        margin-left: 260*@rem;
+        .priceM{
+          color:red;
+          .txt_cut(1);
+        }
+        p{
+          .txt_cut(2);
+          .font-size(14);
+          //width:470*@rem;
+          font-weight: 700;
+          margin-top: 15*@rem;
+        }
+        .time{
+          height:50*@rem;
+          line-height:50*@rem;
+          //.bgc{
+          //  display: inline-block;
+          //  width:70*@rem;
+          //  height:70*@rem;
+          //  background:url("../images/icon_bar.png") -194px -108px no-repeat;
+          //}
+          margin-top: 40*@rem;
+          color:#A9A899;
+          span{
+            color:red;
+            &.num{
+              color:#000;
+              .font-size(14);
+              margin-left:2*@rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.bottom{
+  height:242*@rem;
+  >.dl{
+    margin-top:53*@rem;
+    height: 63*@rem;
+    width: 100%;
+    border-bottom:1px solid #C7C7C7;
+    border-top:1px solid #C7C7C7;
+    position: relative;
+    >div{
+      width:1px;
+      background-color: #C7C7C7;
+      height:100%;
+      position: absolute;
+      top:0;
+      left:30%;
+      &.line{
+        left: 60%;
+      }
+    }
+    >span{
+      display: inline-block;
+      height:100%;
+      width:30%;
+      text-align: center;
+      line-height: 63*@rem;
+      .font-size(16);
+      &.back{
+        width:38%;
+        float: right;
+        a{
+          display: inline-block;
+          img{
+
+          }
+        }
+      }
+    }
+  }
+
+  >.top{
+    margin-top:26*@rem;
+    text-align: center;
+    .font-size(16);
+    span{
+      color:red;
+      .font-size(20);
+    }
+  }
+  >.man{
+    margin-top:10*@rem;
+    text-align: center;
+  }
+}
+.page{
+  height: 94*@rem;
+  background-color: #fff;
+  .le{
+    width: 33.333%;
+    margin-top:15*@rem;
+
+    button{
+      margin-left:50*@rem;
+      width:162*@rem;
+      height:68*@rem;
+      border-radius: 5px;
+      box-shadow: 2px 2px 1px #CCCCCC;
+      .font-size(16);
+      //
+    }
+  }
+  .center{
+
+    margin-top:15*@rem;
+    width: 33.333%;
+    select{
+      margin-left:50*@rem;
+      width:150*@rem;
+      height:70*@rem;
+      .font-size(16);
+      text-indent: 20*@rem;
+    }
+  }
+  .ri{
+    margin-top:15*@rem;
+    width: 33.333%;
+    button{
+      margin-left:50*@rem;
+      width:162*@rem;
+      height:68*@rem;
+      border-radius: 5px;
+      //text-align: center;
+      box-shadow: 2px 2px 1px #CCCCCC;
+      .font-size(16);
+    }
+  }
+}

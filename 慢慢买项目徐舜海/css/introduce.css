@@ -1,0 +1,422 @@
+.header {
+  height: 1.306634rem;
+  background-color: #ff9916;
+  line-height: 1.306634rem;
+}
+.header .left {
+  width: 5.06654rem;
+  margin: 0 0.253327rem;
+}
+.header .left img {
+  width: 5.06654rem;
+}
+.header .right {
+  margin: 0 0.253327rem;
+}
+.header .right img {
+  width: 0.906644rem;
+}
+.search {
+  height: 1.359966rem;
+  line-height: 1.359966rem;
+  background-color: #fff;
+}
+.search .search1 {
+  margin-left: 0.226661rem;
+  overflow: hidden;
+}
+.search .search1 input {
+  height: 0.759981rem;
+  width: 100%;
+  background-color: #F1F1F1;
+  border-radius: 0.39999rem;
+  text-indent: 0.479988rem;
+  color: #9D8AA9;
+}
+[data-dpr='1'] .search .search1 input {
+  font-size: 16px;
+}
+[data-dpr='2'] .search .search1 input {
+  font-size: 32px;
+}
+[data-dpr='3'] .search .search1 input {
+  font-size: 48px;
+}
+.search .search2 {
+  margin-right: 0.199995rem;
+  margin-left: 0.199995rem;
+}
+.search .search2 button {
+  height: 0.759981rem;
+  width: 1.693291rem;
+  background-color: #ff9916;
+  border-radius: 0.39999rem;
+  color: #fff;
+}
+[data-dpr='1'] .search .search2 button {
+  font-size: 16px;
+}
+[data-dpr='2'] .search .search2 button {
+  font-size: 32px;
+}
+[data-dpr='3'] .search .search2 button {
+  font-size: 48px;
+}
+.choose {
+  height: 0.959976rem;
+  background: linear-gradient(to top, #ececec, #ffffff);
+  border-top: 1px solid #C9C9C9;
+  border-bottom: 1px solid #C9C9C9;
+  overflow: hidden;
+}
+.choose .choose1 {
+  height: 0.959976rem;
+}
+.choose .choose1 a {
+  line-height: 0.959976rem;
+  margin-left: 0.199995rem;
+}
+[data-dpr='1'] .choose .choose1 a {
+  font-size: 16px;
+}
+[data-dpr='2'] .choose .choose1 a {
+  font-size: 32px;
+}
+[data-dpr='3'] .choose .choose1 a {
+  font-size: 48px;
+}
+.choose .choose2 {
+  width: 1.679958rem;
+  height: 0.773314rem;
+  margin-top: 0.066665rem;
+}
+.choose .choose2 button {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.066665rem;
+  background: linear-gradient(to bottom, #dbdbdb, #ffffff);
+  box-shadow: 2px 3px 1px #C1C1C1;
+}
+[data-dpr='1'] .choose .choose2 button {
+  font-size: 16px;
+}
+[data-dpr='2'] .choose .choose2 button {
+  font-size: 32px;
+}
+[data-dpr='3'] .choose .choose2 button {
+  font-size: 48px;
+}
+.product {
+  background-color: #fff;
+  position: relative;
+}
+.product p {
+  height: 2.26661rem;
+  text-align: center;
+  padding: 0.13333rem 0.13333rem;
+  box-sizing: border-box;
+}
+[data-dpr='1'] .product p {
+  font-size: 22px;
+}
+[data-dpr='2'] .product p {
+  font-size: 44px;
+}
+[data-dpr='3'] .product p {
+  font-size: 66px;
+}
+.product .pic {
+  height: 4.66655rem;
+  overflow: hidden;
+}
+.product .pic .pic-main {
+  width: 5.039874rem;
+  margin: 0 auto;
+  margin-top: -0.53332rem;
+  overflow: hidden;
+}
+.product .pic .pic-main img {
+  width: 4.66655rem;
+}
+.product .save {
+  width: 1.06664rem;
+  height: 1.06664rem;
+  border-radius: 50%;
+  background-color: #8CCB00;
+  color: #fff;
+  line-height: 1.06664rem;
+  text-align: center;
+  position: absolute;
+  bottom: 0.53332rem;
+  right: 0.639984rem;
+}
+[data-dpr='1'] .product .save {
+  font-size: 16px;
+}
+[data-dpr='2'] .product .save {
+  font-size: 32px;
+}
+[data-dpr='3'] .product .save {
+  font-size: 48px;
+}
+.compare {
+  height: 0.906644rem;
+  background-color: #FFC527;
+  border-top: 1px solid #BD3D02;
+  border-bottom: 1px solid #BD3D02;
+}
+.compare span {
+  display: inline-block;
+  width: 31%;
+  border-right: 1px solid #BD3D02;
+  height: 100%;
+  line-height: 0.866645rem;
+  text-align: center;
+}
+[data-dpr='1'] .compare span {
+  font-size: 14px;
+}
+[data-dpr='2'] .compare span {
+  font-size: 28px;
+}
+[data-dpr='3'] .compare span {
+  font-size: 42px;
+}
+.compare span:last-child {
+  border-right: none;
+}
+.shop {
+  height: 2.733265rem;
+}
+.shop .top {
+  height: 1.186637rem;
+  border-bottom: 1px solid ;
+}
+[data-dpr='1'] .shop .top {
+  font-size: 20px;
+}
+[data-dpr='2'] .shop .top {
+  font-size: 40px;
+}
+[data-dpr='3'] .shop .top {
+  font-size: 60px;
+}
+.shop .top .sc {
+  height: 0.439989rem;
+  margin-left: 0.186662rem;
+  margin-top: 0.333325rem;
+}
+.shop .top .price {
+  margin-top: 0.333325rem;
+}
+.shop .top .price span {
+  color: red;
+  line-height: 0.626651rem;
+  display: inline-block;
+  height: 0.626651rem;
+  text-align: center;
+  margin-right: 0.426656rem;
+}
+.shop .top .price button {
+  width: 1.546628rem;
+  height: 0.626651rem;
+  background-color: #ff9916;
+  color: #fff;
+  line-height: 0.626651rem;
+  text-align: center;
+  border-radius: 0.066665rem;
+  margin-right: 0.053332rem;
+}
+[data-dpr='1'] .shop .top .price button {
+  font-size: 16px;
+}
+[data-dpr='2'] .shop .top .price button {
+  font-size: 32px;
+}
+[data-dpr='3'] .shop .top .price button {
+  font-size: 48px;
+}
+.shop .bottom {
+  height: 1.59996rem;
+  border-bottom: 10px solid #656565;
+  color: #958E92;
+  overflow: hidden;
+}
+[data-dpr='1'] .shop .bottom {
+  font-size: 16px;
+}
+[data-dpr='2'] .shop .bottom {
+  font-size: 32px;
+}
+[data-dpr='3'] .shop .bottom {
+  font-size: 48px;
+}
+.shop .bottom p {
+  margin-top: 0.13333rem;
+  margin-left: 0.239994rem;
+}
+.onPlay {
+  height: 0.853312rem;
+  line-height: 0.853312rem;
+  text-align: center;
+  background-color: #DBDBDB;
+}
+[data-dpr='1'] .onPlay {
+  font-size: 18px;
+}
+[data-dpr='2'] .onPlay {
+  font-size: 36px;
+}
+[data-dpr='3'] .onPlay {
+  font-size: 54px;
+}
+.online {
+  border-bottom: 1px solid  #C5C5C5;
+  box-sizing: border-box;
+  padding: 0 0.226661rem 0.093331rem 0.226661rem;
+}
+.online .content .onTop {
+  height: 1.279968rem;
+}
+.online .content .onTop p.left {
+  height: 100%;
+  color: #615383;
+  line-height: 1.279968rem;
+  text-align: center;
+}
+[data-dpr='1'] .online .content .onTop p.left {
+  font-size: 20px;
+}
+[data-dpr='2'] .online .content .onTop p.left {
+  font-size: 40px;
+}
+[data-dpr='3'] .online .content .onTop p.left {
+  font-size: 60px;
+}
+.online .content .onTop .time p {
+  margin-top: 0.159996rem;
+  color: #615383;
+}
+[data-dpr='1'] .online .content .onTop .time p {
+  font-size: 16px;
+}
+[data-dpr='2'] .online .content .onTop .time p {
+  font-size: 32px;
+}
+[data-dpr='3'] .online .content .onTop .time p {
+  font-size: 48px;
+}
+.online .content .onBottom p {
+  color: #615383;
+}
+[data-dpr='1'] .online .content .onBottom p {
+  font-size: 16px;
+}
+[data-dpr='2'] .online .content .onBottom p {
+  font-size: 32px;
+}
+[data-dpr='3'] .online .content .onBottom p {
+  font-size: 48px;
+}
+.more {
+  height: 1.959951rem;
+  background-color: #fff;
+  position: relative;
+}
+.more .click {
+  height: 0.853312rem;
+  width: 9.533095rem;
+  background-color: #DEDEDE;
+  border-radius: 10px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  line-height: 0.853312rem;
+  text-align: center;
+  box-shadow: 2px 2px 1px #CACACA;
+}
+[data-dpr='1'] .more .click {
+  font-size: 20px;
+}
+[data-dpr='2'] .more .click {
+  font-size: 40px;
+}
+[data-dpr='3'] .more .click {
+  font-size: 60px;
+}
+.bottom {
+  height: 3.226586rem;
+}
+.bottom > .dl {
+  height: 0.839979rem;
+  width: 100%;
+  border-bottom: 1px solid #C7C7C7;
+  border-top: 1px solid #C7C7C7;
+  position: relative;
+}
+.bottom > .dl > div {
+  width: 1px;
+  background-color: #C7C7C7;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 30%;
+}
+.bottom > .dl > div.line {
+  left: 60%;
+}
+.bottom > .dl > span {
+  display: inline-block;
+  height: 100%;
+  width: 30%;
+  text-align: center;
+  line-height: 0.839979rem;
+}
+[data-dpr='1'] .bottom > .dl > span {
+  font-size: 16px;
+}
+[data-dpr='2'] .bottom > .dl > span {
+  font-size: 32px;
+}
+[data-dpr='3'] .bottom > .dl > span {
+  font-size: 48px;
+}
+.bottom > .dl > span.back {
+  width: 38%;
+  float: right;
+}
+.bottom > .dl > span.back a {
+  display: inline-block;
+}
+.bottom > .top {
+  margin-top: 0.346658rem;
+  text-align: center;
+}
+[data-dpr='1'] .bottom > .top {
+  font-size: 16px;
+}
+[data-dpr='2'] .bottom > .top {
+  font-size: 32px;
+}
+[data-dpr='3'] .bottom > .top {
+  font-size: 48px;
+}
+.bottom > .top span {
+  color: red;
+}
+[data-dpr='1'] .bottom > .top span {
+  font-size: 20px;
+}
+[data-dpr='2'] .bottom > .top span {
+  font-size: 40px;
+}
+[data-dpr='3'] .bottom > .top span {
+  font-size: 60px;
+}
+.bottom > .man {
+  margin-top: 0.13333rem;
+  text-align: center;
+}

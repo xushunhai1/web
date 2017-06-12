@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src='lib/flexible/flexible_css.js'></script>
+  <script src='lib/flexible/flexible.js'></script>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/sitenav.css">
+</head>
+<body>
+<!--头部开始-->
+<div class="save">
+  <a href="index.html">
+    <div class="left"><</div>
+    <div class="right"><img src="images/header_app.png" alt=""></div>
+    <p class='center'>商场导航</p>
+  </a>
+</div>
+<div class="product">
+  <ul class='proMain'>
+
+    <!--<li class='left'>-->
+    <!--<img src="" alt="">-->
+    <!--当当-->
+    <!--</li>-->
+    <!--<li class='left'>-->
+    <!--<img src="" alt="">-->
+    <!--京东商城-->
+    <!--</li>-->
+    <!--<li class='left'>-->
+    <!--<img src="" alt="">-->
+    <!--当当-->
+    <!--</li>-->
+  </ul>
+</div>
+<!--底部开始-->
+<div class="bottom">
+  <div class="dl clearfix">
+    <span>登录</span>
+    <div></div>
+    <span>注册</span>
+    <div class='line'></div>
+    <span class='back'>
+      <a href="###">
+        <img src="images/jtt.png" alt="">
+        返回顶部
+      </a>
+    </span>
+  </div>
+  <p class='top'><span>手机APP下载</span>慢慢买手机版--掌上比价平台</p>
+  <p class='man'>m.manmanbuy.com</p>
+</div>
+<script src='lib/jquery/jquery.min.js'></script>
+<script src='lib/artTemplate/template.js'></script>
+<script src='./common/common.js'></script>
+<script id='tpl' type='text/html'>
+  {{each result as item}}
+  <li class='left'>
+    <a href="{{item.navHref}}">
+      <img src="{{item.navImg}}" alt="">
+      {{item.navTitle}}
+    </a>
+  </li>
+  {{/each}}
+</script>
+<script>
+  var getOnline = new Route();
+  getOnline.getDate(function (data) {
+    console.log(data);
+    var str = template('tpl', data);
+    $('.proMain').html(str);
+  }, 'getsitenav')
+
+</script>
+</body>
+</html>

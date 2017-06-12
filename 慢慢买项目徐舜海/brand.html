@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src='lib/flexible/flexible_css.js'></script>
+  <script src='lib/flexible/flexible.js'></script>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/brand.css">
+</head>
+<body>
+<!--顶部开始-->
+<div class='header clearfix'>
+  <a href="index.html" class='left'><img src="images/header_logo.png" alt=""></a>
+  <a href="index.html" class='right'><img src="images/header_app.png" alt=""></a>
+</div>
+<!--search部分-->
+<div class='search'>
+  <div class="search2 right">
+    <button>搜索</button>
+  </div>
+  <div class="search1"><input type="text" value='请输入您想比价的商品'></div>
+</div>
+<!--分类部分-->
+<div class="choose clearfix">
+  <div class="choose1 left">
+    <a href="index.html">首页></a>
+    <a href="brandTitle.html">全部分类></a>
+    <!--<a class='tv' href="#">电视></a>-->
+  </div>
+  <div class="choose2 right ">
+    <button>筛选</button>
+  </div>
+</div>
+<!--热销部分-->
+<div class="hot">
+  平板电视哪个牌子好
+</div>
+<!--产品部分-->
+<div class="product">
+
+</div>
+<!--热销部分-->
+<div class="hot">
+  平板电视产品销售排行
+</div>
+<!--销量排行部分-->
+<div class="picTv">
+
+</div>
+<!--热销部分-->
+<div class="hot">
+  平板电视最新评论
+</div>
+
+<div class="proCom">
+
+</div>
+<!--底部开始-->
+<div class="bottom">
+  <div class="dl clearfix">
+    <span>登录</span>
+    <div></div>
+    <span>注册</span>
+    <div class='line'></div>
+    <span class='back'>
+      <a href="###">
+        <img src="images/jtt.png" alt="">
+        返回顶部
+      </a>
+    </span>
+  </div>
+  <p class='top'><span>手机APP下载</span>慢慢买手机版--掌上比价平台</p>
+  <p class='man'>m.manmanbuy.com</p>
+</div>
+
+<script src='lib/jquery/jquery.min.js'></script>
+<script src='lib/artTemplate/template.js'></script>
+<script src='common/common.js'></script>
+<script id='tpl' type='text/html'>
+  {{each result as item}}
+  <div class="main" >
+    <a href="">
+      <div class="left lef{{item.brandId}}">
+        {{item.brandId+1}}
+      </div>
+      <div class="right">
+        >
+      </div>
+      <div class="center">
+        <h2>{{item.brandName}}</h2>
+        <p>{{item.brandInfo}}</p>
+      </div>
+    </a>
+
+  </div>
+  {{/each}}
+</script>
+<script id='tpl1' type='text/html'>
+  {{each result as data}}
+  <a href="introduce.html?list={{data.productId}}">
+    <div class="picMain clearfix">
+      <div class="pic left">
+        {{#data.productImg}}
+      </div>
+      <div class="info">
+        <p class='fir'>{{data.productName}}</p>
+        <p class='price'>{{data.productPrice}}</p>
+        <p class='last'>{{data.productQuote}} {{data.productCom}}</p>
+      </div>
+    </div>
+  </a>
+  {{/each}}
+</script>
+<script id='tp2' type='text/html'>
+  {{each result as data}}
+  <a href="introduce.html?list={{data.productId}}">
+    <div class="picMain clearfix">
+      <div class="top">
+        <div class="pic left">
+
+        </div>
+        <div class="info">
+
+        </div>
+      </div>
+      <div class="pl">
+        <div class="name clearfix">
+          <span class='left'>{{data.comName}}:</span>
+          <span class='right'>{{data.comTime}}</span>
+        </div>
+        <p>{{data.comContent}}</p>
+      </div>
+    </div>
+  </a>
+  {{/each}}
+</script>
+<script>
+  var url = location.href;
+  var getList = new Route();
+  var list = getList.query(url).list;
+  var getBrand = new Route();
+  getBrand.getDate(function (data) {
+//    console.log(data);
+    var str = template('tpl', data);
+    $('.product').html(str);
+
+    $('.product .main .lef0').css('background', 'red');
+    $('.product .main .lef1').css('background', 'orange');
+    $('.product .main .lef2').css('background', 'springgreen');
+  }, 'getbrand', {brandtitleid: list})
+
+  var getProList = new Route();
+  getProList.getDate(function (data) {
+    console.log(data)
+    var str = template('tpl1', data);
+    $('.picTv').html(str)
+    var productId=data.result[0].productId;
+    var img=data.result[0].productImg;
+    var productName=data.result[0].productName;
+    getPl.getDate((function (data) {
+      console.log(data);
+      var str = template('tp2', data);
+      $('.proCom').html(str);
+      $('.proCom .picMain .pic').html(img);
+      $('.proCom .picMain .info').html(productName);
+    }), 'getproductcom', {productid:productId})
+  }, 'getbrandproductlist', {brandtitleid: list, pagesize: 4})
+
+  var getPl = new Route();
+
+</script>
+</body>
+</html>

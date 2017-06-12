@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src='lib/flexible/flexible_css.js'></script>
+  <script src='lib/flexible/flexible.js'></script>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/moneyctrl.css">
+</head>
+<body>
+<!--头部开始-->
+<div class="save">
+  <a href="index.html">
+    <div class="left"><</div>
+    <div class="right"><img src="images/header_app.png" alt=""></div>
+    <p class='center'>省钱控-最新优惠</p>
+
+  </a>
+</div>
+<!--商品部分-->
+<div class="product">
+  <ul class='productMain'>
+
+  </ul>
+</div>
+<!--翻页部分-->
+<div class="page">
+  <div class="le left">
+    <button>上一页</button>
+  </div>
+  <div class="center left">
+    <select>
+      <!--<option><span class='num1'>1</span>/<span class='num2'></span></option>-->
+      <!--<option><span class='num'>2</span>/3</option>-->
+      <!--<option><span class='num'>3</span>/3</option>-->
+    </select>
+  </div>
+  <div class="ri left">
+    <button>下一页</button>
+  </div>
+</div>
+<!--底部开始-->
+<div class="bottom">
+  <div class="dl clearfix">
+    <span>登录</span>
+    <div></div>
+    <span>注册</span>
+    <div class='line'></div>
+    <span class='back'>
+      <a href="###">
+        <img src="images/jtt.png" alt="">
+        返回顶部
+      </a>
+    </span>
+  </div>
+  <p class='top'><span>手机APP下载</span>慢慢买手机版--掌上比价平台</p>
+  <p class='man'>m.manmanbuy.com</p>
+</div>
+<script src='lib/jquery/jquery.min.js'></script>
+<script src='lib/artTemplate/template.js'></script>
+<script src='./common/common.js'></script>
+<script id='tpl' type='text/html'>
+  {{each result as item}}
+  <li>
+    <a href="moneyctrl1.html?list={{item.productId}}">
+      <div class='pro-main clearfix'>
+        <div class="pic">
+          {{#item.productImgSm}}
+        </div>
+        <div class="price">
+          <p>{{item.productName}}</p>
+          <p class='priceM'>{{item.productPinkage}}</p>
+          <p class="time clearfix ">
+            {{item.productFrom}} |
+            <span>{{item.productTime}}</span>
+            <span class='num right'>{{item.productComCount}}</span>
+          </p>
+        </div>
+      </div>
+    </a>
+  </li>
+  {{/each}}
+</script>
+<script>
+  var urlDate=location.href;
+//  console.log(urlDate);
+  var getPageid=new Route();
+  var pageid=getPageid.query(urlDate).pageid;
+  console.log(pageid);
+  //  console.log(pageid);
+  var getPro=new Route();
+var pageCount;
+  function get(){
+    getPro.getDate(function(data){
+      console.log(data);
+      var tplStr=template('tpl',data);
+      $('.productMain').html(tplStr);
+
+      var totalCount=data.totalCount;
+      var totalPage=data.pagesize;
+      pageCount=Math.ceil(totalCount/totalPage);
+      init();
+    },'getmoneyctrl',{pageid:pageid});
+  }
+var select=document.querySelector('.center select');
+function init(){
+  for(var i=0;i<pageCount;i++){
+    var option;
+    option+='<option>'+(i+1)+'/'+pageCount+'</option>';
+  }
+  select.innerHTML=option;
+  $(select).children().eq(pageid).prop('selected',true);
+}
+
+$('select').on('change',function(){
+  var $count=$(this).val();
+  $count=$count.slice(0,1);
+  window.location='./moneyctrl.html?pageid='+($count-1);
+})
+  get();
+  $('.ri').on('click',function(){
+    if(pageid>=pageCount){
+      return;
+    }
+    pageid++;
+    window.location='./moneyctrl.html?pageid='+pageid;
+  })
+  $('.le').on('click',function(){
+    if(pageid<0){
+      return;
+    }
+    pageid--;
+    window.location='./moneyctrl.html?pageid='+pageid;
+  })
+</script>
+</body>
+</html>

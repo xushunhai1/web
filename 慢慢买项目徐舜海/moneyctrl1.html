@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src='lib/flexible/flexible_css.js'></script>
+  <script src='lib/flexible/flexible.js'></script>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/moneyctr1l.css">
+</head>
+<body>
+<!--头部开始-->
+<div class="save">
+  <a href="moneyctrl.html">
+    <div class="left"><</div>
+    <div class="right"><img src="images/header_app.png" alt=""></div>
+    <p class='center'>国内折扣</p>
+
+  </a>
+</div>
+
+<!--折扣内容部分开始-->
+<div class="saveCont">
+  <!--<h2>移动端凑单品:海天 鲜味 生抽 1.28L</h2>-->
+  <!--<p>京东商城 10-25 14:10 小编烟火/慢慢来</p>-->
+  <!--<div class="content">-->
+    <!--<img class='right' src="images/pic.png" alt="">-->
+    <!--文字文字文字文字文字文字文字文字文字文字-->
+    <!--文字文字文字文字文字文字文字文字文字文字-->
+    <!--文字文字文字文字文字文字文字文字文字文字-->
+    <!--文字文字文字文字文字文字文字文字文字文字-->
+    <!--文字文字文字文字文字文字文字文字文字文字-->
+    <!--文字文字文字文字文字文字文字文字文字文字-->
+    <!--文字文字文字文字文字文字文字文字文字文字-->
+    <!--文字文字文字文字文字文字文字文字文字文字-->
+    <!--文字文字文字文字文字文字文字文字文字文字-->
+    <!--文字文字文字文字文字文字文字文字文字文字-->
+  <!--</div>-->
+  <!--<div class="bigpic">-->
+    <!--<img src="images/bpic.png" alt="">-->
+  <!--</div>-->
+  <!--<div class="area">-->
+    <!--<div class="areaCon">-->
+      <!--<ul>-->
+        <!--<li class='clearfix'>-->
+          <!--<span class=left>北京</span>-->
+          <!--<span class='right sp'>有货</span>-->
+        <!--</li>-->
+        <!--<li class='clearfix'>-->
+          <!--<span class=left>北京</span>-->
+          <!--<span class='right sp'>有货</span>-->
+        <!--</li>-->
+        <!--<li class='clearfix'>-->
+          <!--<span class=left>北京</span>-->
+          <!--<span class='right sp'>有货</span>-->
+        <!--</li>-->
+        <!--<li class='clearfix'>-->
+          <!--<span class=left>北京</span>-->
+          <!--<span class='right sp'>有货</span>-->
+        <!--</li>-->
+        <!--<li class='clearfix'>-->
+          <!--<span class=left>北京</span>-->
+          <!--<span class='right sp'>有货</span>-->
+        <!--</li>-->
+        <!--<li class='clearfix'>-->
+          <!--<span class=left>北京</span>-->
+          <!--<span class='right sp'>有货</span>-->
+        <!--</li>-->
+        <!--<li class='clearfix'>-->
+          <!--<span class=left>北京</span>-->
+          <!--<span class='right sp'>有货</span>-->
+        <!--</li>-->
+      <!--</ul>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--&lt;!&ndash;购买开始&ndash;&gt;-->
+  <!--<div class="buy">-->
+    <!--<div class="gobuy">-->
+      <!--前往购买-->
+    <!--</div>-->
+    <!--<div class="weixin">-->
+      <!--<img src="images/mmbweixin2.png" alt="">-->
+    <!--</div>-->
+  <!--</div>-->
+
+  <!--&lt;!&ndash;评论部分&ndash;&gt;-->
+  <!--<div class="pl">-->
+    <!--<h4>发表评论</h4>-->
+    <!--<div class="send">-->
+      <!--<div class='text' cols="30" rows="10"></div>-->
+      <!--<div class="click">-->
+        <!--<input type="text">-->
+        <!--<div class="right">-->
+          <!--发表评论-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<h4>最新评论</h4>-->
+    <!--<div class="online">-->
+      <!--<div class="line clearfix">-->
+        <!--<div class="left clearfix">-->
+          <!--<div class="pic left">-->
+            <!--&lt;!&ndash;<img src="" alt="">&ndash;&gt;-->
+          <!--</div>-->
+          <!--<div class="con right">-->
+            <!--<p class="name">-->
+              <!--赶鸭子上架-->
+            <!--</p>-->
+            <!--<p>比超市便宜几块</p>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="right">-->
+          <!--2016/10/25 14:18:26-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+</div>
+<div class="city">
+
+</div>
+<!--底部开始-->
+<div class="bottom">
+  <div class="dl clearfix">
+    <span>登录</span>
+    <div></div>
+    <span>注册</span>
+    <div class='line'></div>
+    <span class='back'>
+      <a href="###">
+        <img src="images/jtt.png" alt="">
+        返回顶部
+      </a>
+    </span>
+  </div>
+  <p class='top'><span>手机APP下载</span>慢慢买手机版--掌上比价平台</p>
+  <p class='man'>m.manmanbuy.com</p>
+</div>
+<script src='lib/jquery/jquery.min.js'></script>
+<script src='lib/artTemplate/template.js'></script>
+<script src='./common/common.js'></script>
+<script id='tpl' type='text/html'>
+  {{each result as data}}
+  <h2>{{data.productName}}</h2>
+  <p>{{data.productFrom}} {{data.productTime}} {{data.productTips}}</p>
+  <div class="content">
+    {{#data.productImgSm}}
+    {{data.productInfo}}
+    {{data.productInfo1}}
+    {{data.productInfo2}}
+  </div>
+  <div class="bigpic">
+   {{#data.productImgLg}}
+  </div>
+  <div class="area">
+    <div class="areaCon">
+      <!--<ul>-->
+        <!--<li class='clearfix'>-->
+          <!--<span class=left></span>-->
+        <!--</li>-->
+      <!--</ul>-->
+      {{#data.productCity}}
+    </div>
+  </div>
+  <!--购买开始-->
+  <div class="buy">
+    <div class="gobuy">
+      前往购买
+    </div>
+    <div class="weixin">
+      <img src="images/mmbweixin2.png" alt="">
+    </div>
+  </div>
+
+  <!--评论部分-->
+  <div class="pl">
+    <!--<h4>发表评论</h4>-->
+    <!--<div class="send">-->
+      <!--<div class='text' cols="30" rows="10"></div>-->
+      <!--<div class="click">-->
+        <!--<input type="text">-->
+        <!--<div class="right">-->
+          <!--发表评论-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<h4>最新评论</h4>-->
+    <!--<div class="online">-->
+      <!--<div class="line clearfix">-->
+        <!--<div class="left clearfix">-->
+          <!--<div class="pic left">-->
+            <!--<img src="" alt="">-->
+            {{#data.productComment}}
+          <!--</div>-->
+          <!--<div class="con right">-->
+            <!--<p class="name">-->
+              <!--赶鸭子上架-->
+            <!--</p>-->
+            <!--<p>比超市便宜几块</p>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="right">-->
+          <!--2016/10/25 14:18:26-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  </div>
+  {{/each}}
+</script>
+<script>
+  var dataUrl=location.href;
+  console.log(dataUrl);
+  var getId=new Route();
+  var id=getId.query(dataUrl).list;
+  console.log(id);
+  var getPro=new Route();
+  getPro.getDate(function(data){
+    console.log(data);
+      var str=template('tpl',data);
+      $('.saveCont').html(str);
+  },'getmoneyctrlproduct',{productid:id})
+</script>
+</body>
+</html>

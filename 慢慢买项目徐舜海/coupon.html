@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src='lib/flexible/flexible_css.js'></script>
+  <script src='lib/flexible/flexible.js'></script>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/coupon.css">
+</head>
+<body>
+<!--头部开始-->
+<div class="save ">
+  <a href="index.html">
+    <div class="left"><</div>
+    <div class="right"><img src="images/header_app.png" alt=""></div>
+    <p class='center'>优惠券</p>
+
+  </a>
+</div>
+
+<div class="product">
+  <ul class="main clearfix">
+
+    <!--<li>-->
+
+    <!--</li>-->
+    <!--<li>-->
+
+    <!--</li>-->
+  </ul>
+</div>
+<div class="choose clearfix">
+  <div class="choose1 left">
+    <a href="index.html">首页></a>
+    <a href="coupon.html">优惠券</a>
+    <!--<a class='tv' href="#">电视></a>-->
+  </div>
+  <div class="choose2 right ">
+    <button>筛选</button>
+  </div>
+</div>
+<!--底部开始-->
+<div class="bottom">
+  <div class="dl clearfix">
+    <span>登录</span>
+    <div></div>
+    <span>注册</span>
+    <div class='line'></div>
+    <span class='back'>
+      <a href="###">
+        <img src="images/jtt.png" alt="">
+        返回顶部
+      </a>
+    </span>
+  </div>
+  <p class='top'><span>手机APP下载</span>慢慢买手机版--掌上比价平台</p>
+  <p class='man'>m.manmanbuy.com</p>
+</div>
+<script src='lib/jquery/jquery.min.js'></script>
+<script src='lib/artTemplate/template.js'></script>
+<script src='common/common.js'></script>
+<script id='tpl' type='text/html'>
+  {{each result as data}}
+  <li>
+    <a href="coupon1.html?list={{data.couponId}}">
+    <img src="{{data.couponImg}}" alt="">
+    <p>{{data.couponTitle}}</p>
+    </a>
+  </li>
+  {{/each}}
+</script>
+<script>
+  var getTitle=new Route();
+  getTitle.getDate(function(data){
+    console.log(data);
+    var str=template('tpl',data);
+    $('.main').html(str);
+  },'getcoupon')
+</script>
+</body>
+</html>

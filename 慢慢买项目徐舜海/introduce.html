@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src='lib/flexible/flexible_css.js'></script>
+  <script src='lib/flexible/flexible.js'></script>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/introduce.css">
+</head>
+<body>
+<!--顶部开始-->
+<div class='header clearfix'>
+  <a href="index.html" class='left'><img src="images/header_logo.png" alt=""></a>
+  <a href="index.html" class='right'><img src="images/header_app.png" alt=""></a>
+</div>
+<!--search部分-->
+<div class='search'>
+  <div class="search2 right">
+    <button>搜索</button>
+  </div>
+  <div class="search1"><input type="text" value='请输入您想比价的商品'></div>
+</div>
+<!--分类部分-->
+<div class="choose clearfix">
+  <div class="choose1 left">
+    <a href="index.html">首页></a>
+    <a href="proTv.html">电视></a>
+    <a class='pir' href="###"></a>
+  </div>
+  <div class="choose2 right ">
+    <button>筛选</button>
+  </div>
+</div>
+<!--商品部分-->
+<div class="product">
+
+</div>
+<!--比价部分-->
+<div class="compare">
+  <span>比价购买</span>
+  <span>产品参数</span>
+  <span>评价（2322）</span>
+</div>
+
+<!--商城部分-->
+<div class="shop">
+  <div class="top">
+    <div class="sc left">
+      <img src="images/slogo.png" alt="">
+      <span>京东商城</span>
+    </div>
+    <div class="price right">
+      <span>&yen;1999.00</span>
+      <button>去购买</button>
+    </div>
+  </div>
+  <div class="bottom">
+    <p>*实际价格以各网站列出的实际价格为准，我们提供的价格可能有数小时至数日的延迟</p>
+  </div>
+</div>
+
+<!--网友评价部分-->
+<h4 class='onPlay'>网友评价</h4>
+<div class="online">
+
+</div>
+<!--更多评价-->
+<div class="more">
+  <button class="click">
+    点击查看更多评价
+  </button>
+</div>
+<!--底部开始-->
+<div class="bottom">
+  <div class="dl clearfix">
+    <span>登录</span>
+    <div></div>
+    <span>注册</span>
+    <div class='line'></div>
+    <span class='back'>
+      <a href="###">
+        <img src="images/jtt.png" alt="">
+        返回顶部
+      </a>
+    </span>
+  </div>
+  <p class='top'><span>手机APP下载</span>慢慢买手机版--掌上比价平台</p>
+  <p class='man'>m.manmanbuy.com</p>
+</div>
+<script src='lib/jquery/jquery.min.js'></script>
+<script src='lib/artTemplate/template.js'></script>
+<script src='./common/common.js'></script>
+<script id='tpl' type='text/html'>
+  {{each result as data}}
+  <p>{{data.productName}}</p>
+  <div class="pic">
+    <div class="pic-main">
+      {{#data.productImg}}
+    </div>
+  </div>
+  <div class="save">
+    收藏
+  </div>
+  {{/each}}
+</script>
+<script id='template' type='text/html'>
+{{each result as item}}
+<div class="content">
+  <div class="onTop">
+    <p class='left'>{{item.comName}}</p>
+    <div class="time right">
+      <p>{{item.comTime}}</p>
+      <p>{{item.comFrom}}</p>
+    </div>
+  </div>
+  <div class="onBottom">
+    <p>{{item.comContent}}</p>
+  </div>
+</div>
+{{/each}}
+</script>
+<script>
+  $(function () {
+    var dataUrl = location.href;
+//    console.log(dataUrl);
+    var id = new Route();
+    var list = id.query(dataUrl).list;
+    console.log(list);
+//    console.log(list);
+//    var id1=new Route();
+//    var page=id1.query(dataUrl).pageId;
+//    console.log(page);
+    var change = new Route();
+    change.getDate(function (data) {
+      console.log(data);
+      var str = template('tpl', data);
+      $('.product').html(str);
+
+      var name=data.result[0].productName;
+      var useName=name.split(' ')[0];
+      $('.pir').html(useName+'>');
+      console.log(useName);
+    }, 'getproduct', {productid: list})
+
+
+
+    var introduce=new Route();
+    introduce.getDate(function(data){
+        console.log(data);
+      var tplStr=template('template',data);
+      $('.online').html(tplStr);
+    },'getproductcom',{productid:list})
+  })
+</script>
+</body>
+</html>
